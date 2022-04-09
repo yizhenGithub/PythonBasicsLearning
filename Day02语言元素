@@ -1,41 +1,116 @@
-"""
-1. 变量类型：
-1.1 Numbers:
-1.11 整型Integer：
-二进制（如0b100，换算成十进制是4）、八进制（如0o100，换算成十进制是64）、十进制（100）和十六进制（0x100，换算成十进制是256）的表示法。
-1.12 浮点型Float：
-浮点数除了数学写法（如123.456）之外还支持科学计数法（如1.23456e2）。
-1.13 复数型Complex：
-3+5j（虚部的i换成了j）
-**numerical modules**
+
+#1. 变量类型：
+
+#1.1 Numbers:
+
+#1.11 整型Integer：二进制（如0b100，换算成十进制是4）、八进制（如0o100，换算成十进制是64）、十进制（100）和十六进制（0x100，换算成十进制是256）的表示法
+
+#1.12 浮点型Float：浮点数除了数学写法（如123.456）之外还支持科学计数法（如1.23456e2）
+
+#1.13 复数型Complex：3+5j（虚部的i换成了j）
+
+#1.14 Numerical Modules:
+
+#math
 import math
 math.pi
 math.sqrt(85) 
+
+#random
 import random
 random.random() 
 random.choice([1, 2, 3, 4])
 
-1.2 字符串型String：
-以单引号或双引号括起来的任意文本
-原始字符串表示法、字节字符串表示法、Unicode字符串表示法
-1.21 Sequence operation:
-1.211 indexing:
+#1.2 字符串型String：以单引号或双引号括起来的任意文本(原始字符串表示法、字节字符串表示法、Unicode字符串表示法)
+
+#1.21 Sequence operation:
+
+#indexing:
 S = 'Spam'
 len(S)
 S[0]
 S[-1]
 S[len(S)-1] 
-1.212 slicing:
+#slicing:
 S[1:3]
 S[1:]
 S[:3]
 S[:-1]
 S[:]
-1.213 concatenation and repetition:
+#concatenation and repetition:
 S + 'xyz'
 S * 8
-1.22 Immutability
 
+# 1.22 Immutability: 
+
+# immutable object: numbers, strings, and tuples
+
+# mutable object: lists, dictionaries, and sets
+
+# Examples:
+S[0] = 'z'           # TypeError:  'str' object does not support item assignment
+S = 'z' + S[1:]      # But we can run expressions to make new objects
+
+# bytearray:
+B = bytearray(b'spam')
+B.extend(b'eggs')
+B.decode()
+
+# 1.23 Type-Specific Methods:
+
+# Returns the offset of the passed-in substring, or −1 if itsn't present:
+S = 'Spam'
+S.find('pa') #return 1
+
+# replace method:
+S.replace('pa', 'XYZ')        # return 'SXYZm'
+S                             # return 'Spam'
+
+# split a string into substrings on a delimiter:
+line = 'aaa,bbb,ccccc,dd'      
+line.split(',').              # return ['aaa', 'bbb', 'ccccc', 'dd']
+
+# perform case conversions:
+S = 'Spam'
+S.upper()                     # Upper- and lowercase conversions
+
+# Content tests: isalpha, isdigit, etc.
+S.isalpha()   
+
+# Strip whitespace characters off the ends of the string:
+line = 'aaa,bbb,ccccc,dd\n'   
+line.rstrip()                 # return 'aaa,bbb,ccccc,dd'
+line.rstrip().split(',')      # return ['aaa', 'bbb', 'ccccc', 'dd']
+
+# Advanced substitution operation:
+'%s, eggs, and %s' % ('spam', 'SPAM!')       # return 'spam, eggs, and SPAM!'
+'{0}, eggs, and {1}'.format('spam', 'SPAM!') # return 'spam, eggs, and SPAM!'
+'{}, eggs, and {}'.format('spam', 'SPAM!')   # return 'spam, eggs, and SPAM!'
+'{:,.2f}'.format(296999.2567).               # return '296,999.26'
+'%.2f | %+05d' % (3.14159, −42)              # return '3.14 | −0042'
+
+# The Helper Function:
+# Accept data type both as a real object (S), or the name of a data type (str, list)
+# dir function:
+dir(S).         # returns a list of all the attributes available for S
+# help function:
+help(S.replace) # return the functionality of replace function. 
+help(S)
+
+# 1.24 Other Ways to Code Strings:
+
+S = 'A\nB\tC'
+ord('\n')
+S = 'A\0B\0C'
+S               # return 'a\x00B\x00C'
+msg = """       # return aaaaaaaaaaaaa
+
+# 1.25 Unicode String:
+
+#  Characters in the Japanese and Russian alphabets:
+'sp\xc4m'       # return 'spÄm'
+
+# 1.26 Pattern Matching
 
 1.4 布尔型Bool：
 True
@@ -43,9 +118,7 @@ False
 1.5 复数型Complex：
 3+5j（虚部的i换成了j）
 """
-import math
-math.pi
-math.sqrt(85) 
+
 
 2. 变量的使用
 """
