@@ -18,3 +18,24 @@ score = float(input('请输入成绩: '))
 a = float(input('a = '))
 b = float(input('b = '))
 c = float(input('c = '))
+
+'''
+input：an positive integer
+output: boolean (determine whether the input is a prime)
+'''
+
+posInt = int(input("Please enter a positive integer: "))
+if posInt == 1:
+    print("It is not a Prime.")
+elif posInt == 2:
+    print("It is a Prime.")
+elif True:
+    count = 2
+    for i in range(2, posInt):
+        if posInt%i ==0:
+            print("It is not a prime.")
+            break
+        else:
+            count+=1
+            if count == posInt:
+                print("It is a Prime.")
